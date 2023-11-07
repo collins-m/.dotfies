@@ -14,5 +14,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "collins-m";
+    userEmail = "github.5mwzw@reroutemail.com";
+  };
 }

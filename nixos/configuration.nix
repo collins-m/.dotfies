@@ -110,7 +110,7 @@ in {
   grim
   slurp
   wl-clipboard
-  bemenu
+  rofi-wayland
   mako
   wdisplays
   ];
