@@ -115,6 +115,11 @@ in {
   wdisplays
   ];
 
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
+  ];
+
   # Sound
   services.pipewire = {
     enable = true;
