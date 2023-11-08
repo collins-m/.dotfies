@@ -133,12 +133,6 @@ in {
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  # enable sway
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
   # Greeter service
   services.greetd = {
     enable = true;
@@ -159,6 +153,8 @@ in {
 
   # Enable zsh system-wide before user configuration
   programs.zsh.enable = true;
+
+  security.polkit.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 

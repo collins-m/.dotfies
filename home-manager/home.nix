@@ -6,6 +6,7 @@ in {
     ./kitty.nix
     ./rofi.nix
     ./swaylock.nix
+    ./sway.nix
   ];
 
   home.username = "maidhc";
