@@ -20,7 +20,7 @@
     destination = "/bin/configure-gtk";
     executable = true;
 
-    text = let 
+    text = let
       schema = pkgs.gsettings-desktop-schemas;
       datadir = "${schema}/share/gsettings-schemas/${schema.name}";
     in ''
@@ -88,7 +88,7 @@ in {
   users.users.maidhc = {
     isNormalUser = true;
     description = "Mícheál Ó Coileáin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -96,7 +96,7 @@ in {
 
 
   environment.systemPackages = with pkgs; [
-  home-manager 
+  home-manager
   dbus-sway-environment
   configure-gtk
   wayland
@@ -119,10 +119,16 @@ in {
   ];
 
   # Sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
   services.pipewire = {
-    enable = true;
-    alsa.enable = true;
+    enable = false;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Portals
@@ -154,7 +160,10 @@ in {
   # Enable zsh system-wide before user configuration
   programs.zsh.enable = true;
 
-  security.polkit.enable = true;
+  security = {
+    polkit.enable = true;
+    pam.services.swaylock = {};
+  };
 
   system.stateVersion = "23.05"; # Did you read the comment?
 

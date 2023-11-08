@@ -44,6 +44,10 @@
       bindsym Mod4+Escape exec swaylock
       output * bg ~/.config/wallpaper/wallpaper.png fill
       default_border none
+
+      bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +5%'
+      bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'
+      bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
     '';
   };
 }
