@@ -40,9 +40,9 @@
       exec swaymsg "workspace 1"; exec $term"
       exec swaymsg "workspace 2"; exec $browser"
       exec swaymsg "workspace 1"
-     
+
       bindsym Mod4+Escape exec swaylock
-      output * bg ~/assets/wallpapers/gruvbox_pixel_church.png fill
+      output * bg ~/.config/wallpaper/wallpaper.png fill
       default_border none
     '';
   };
