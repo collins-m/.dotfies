@@ -5,6 +5,7 @@ in {
     ./zsh.nix
     ./kitty.nix
     ./rofi.nix
+    ./swaylock.nix
   ];
 
   home.username = "maidhc";

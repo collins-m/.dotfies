@@ -104,7 +104,6 @@ in {
   glib
   nordic
   gnome3.adwaita-icon-theme
-  swaylock
   swayidle
   grim
   slurp
