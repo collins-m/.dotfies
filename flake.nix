@@ -28,7 +28,7 @@
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
-          ./nixos/configuration.nix
+          ./.config/nixos/configuration.nix
         ];
       };
     };
@@ -39,7 +39,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
         modules = [
-          ./home-manager/home.nix
+          ./.config/home-manager/home.nix
         ];
       };
     };
