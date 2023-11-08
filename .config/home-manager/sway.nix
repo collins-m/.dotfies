@@ -37,8 +37,8 @@
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.rofi-wayland}/bin/rofi -show drun -show-icons | ${pkgs.findutils}/bin/xargs swaymsg exec --";
     };
     extraConfig = ''
-      exec swaymsg "workspace 1"; exec $term"
-      exec swaymsg "workspace 2"; exec $browser"
+      exec swaymsg "workspace 1"; exec kitty"
+      exec swaymsg "workspace 2"; exec firefox"
       exec swaymsg "workspace 1"
 
       bindsym Mod4+Escape exec swaylock

@@ -144,7 +144,7 @@ in {
     enable = true;
     settings = rec {
       initial_session = {
-        command = "${pkgs.sway}/bin/sway";
+        command = "sway";
 	user = "maidhc";
       };
       default_session = initial_session;
