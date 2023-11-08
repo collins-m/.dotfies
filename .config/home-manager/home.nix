@@ -7,14 +7,14 @@ in {
     ./rofi.nix
     ./swaylock.nix
     ./sway.nix
-  ];
+    ./neovim.nix
+];
 
   home.username = "maidhc";
   home.homeDirectory = "/home/maidhc";
   home.stateVersion = "23.05";
   home.packages = with pkgs; [
     neofetch
-    neovim
     firefox
     fzf
   ];
