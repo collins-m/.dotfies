@@ -113,6 +113,7 @@ in {
   rofi-wayland
   mako
   wdisplays
+  pure-prompt
   ];
 
   fonts.packages = with pkgs; [
@@ -159,16 +160,8 @@ in {
     sway
   '';
 
-  # Enable ZSH as default shell
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    enableCompletion = true;
-    shellAliases = {
-      dotfiles = "${pkgs.git}/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
-    };
-  };
-
+  # Enable Zsh system-wide
+  programs.zsh.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 

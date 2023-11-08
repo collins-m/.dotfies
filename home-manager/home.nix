@@ -1,6 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }: let
+  editor = "nvim";
+in {
+  imports = [
+    ./zsh.nix
+  ];
 
-{
   home.username = "maidhc";
   home.homeDirectory = "/home/maidhc";
   home.stateVersion = "23.05";
@@ -9,13 +13,12 @@
     neovim
     firefox
     fzf
-    pure-prompt
   ];
 
   home.file = {
   };
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "${editor}";
   };
   programs.git = {
     enable = true;
