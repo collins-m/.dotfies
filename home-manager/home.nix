@@ -4,6 +4,7 @@ in {
   imports = [
     ./zsh.nix
     ./kitty.nix
+    ./rofi.nix
   ];
 
   home.username = "maidhc";

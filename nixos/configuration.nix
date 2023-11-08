@@ -109,7 +109,6 @@ in {
   grim
   slurp
   wl-clipboard
-  rofi-wayland
   mako
   wdisplays
   pure-prompt
