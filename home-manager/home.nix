@@ -3,6 +3,7 @@
 in {
   imports = [
     ./zsh.nix
+    ./kitty.nix
   ];
 
   home.username = "maidhc";

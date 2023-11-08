@@ -97,7 +97,6 @@ in {
 
   environment.systemPackages = with pkgs; [
   home-manager 
-  kitty
   dbus-sway-environment
   configure-gtk
   wayland
@@ -160,7 +159,7 @@ in {
     sway
   '';
 
-  # Enable Zsh system-wide
+  # Enable zsh system-wide before user configuration
   programs.zsh.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
