@@ -8,22 +8,7 @@
       terminal = "kitty";
       bars = [
         ({
-          position = "top";
-	  statusCommand = "while date +'%y-%m-%d %H:%M:%S %p'; do sleep 1; done";
-          colors = {
-            statusline = "#ffffff";
-	    background = "#282828";
-	    focusedWorkspace = {
-	      background = "#928374";
-	      border = "#928374";
-	      text = "#ebdbb2";
-	    };
-	    inactiveWorkspace = {
-	      background = "#1d2021";
-	      border = "#1d2021";
-	      text = "#665c54";
-	    };
-	  };
+          command = "waybar";
         })
       ];
       input."*" = {

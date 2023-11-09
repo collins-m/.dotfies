@@ -8,7 +8,8 @@ in {
     ./swaylock.nix
     ./sway.nix
     ./neovim.nix
-];
+    ./waybar.nix
+  ];
 
   home.username = "maidhc";
   home.homeDirectory = "/home/maidhc";
