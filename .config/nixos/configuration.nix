@@ -88,7 +88,7 @@ in {
   users.users.maidhc = {
     isNormalUser = true;
     description = "Mícheál Ó Coileáin";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };
@@ -164,6 +164,9 @@ in {
     polkit.enable = true;
     pam.services.swaylock = {};
   };
+
+  hardware.opengl.enable = true;
+  programs.light.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 
