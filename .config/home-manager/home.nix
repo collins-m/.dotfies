@@ -2,13 +2,13 @@
   editor = "nvim";
 in {
   imports = [
-    ./zsh.nix
-    ./kitty.nix
-    ./rofi.nix
-    ./swaylock.nix
-    ./sway.nix
-    ./neovim.nix
-    ./waybar.nix
+    ./zsh
+    ./kitty
+    ./rofi
+    ./swaylock
+    ./sway
+    ./neovim
+    ./waybar
   ];
 
   home.username = "maidhc";
