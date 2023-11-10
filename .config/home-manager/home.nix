@@ -17,7 +17,7 @@ in {
   home.packages = with pkgs; [
     neofetch
     firefox
-    fzf
+    ripgrep
   ];
 
   home.file = {
