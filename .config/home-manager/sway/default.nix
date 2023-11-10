@@ -6,11 +6,24 @@
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
-      bars = [
-        ({
-          command = "waybar";
-        })
-      ];
+      bars = [({
+        position = "top";
+        statusCommand = "while date +'%y-%m-%d %H:%M:%S %p'; do sleep 1; done";
+        colors = {
+          statusline = "#ffffff";
+          background = "#282828";
+          focusedWorkspace = {
+            background = "#928374";
+            border = "#928374";
+            text = "#ebdbb2";
+          };
+          inactiveWorkspace = {
+            background = "#1d2021";
+            border = "#1d2021";
+            text = "#665c54";
+          };
+        };
+      })];
       input."*" = {
         xkb_layout = "ie";
         xkb_options = "caps:backspace";
@@ -20,15 +33,14 @@
 	middle_emulation = "enabled";
       };
       menu = "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.rofi-wayland}/bin/rofi -show drun -show-icons | ${pkgs.findutils}/bin/xargs swaymsg exec --";
-#     startup = [];
       workspaceAutoBackAndForth = true;
     };
     extraConfig = ''
       bindsym Mod4+Escape exec swaylock
-      bindsym Mod4+c exec grim "$(slurp) /tmp/$(date + '%H:%M:%S.png')
+      bindsym Mod4+c exec grim -g "$(slurp)" /tmp/$(date + '%H:%M:%S.png')
 
-      exec dbus-sway-environment
-      exec configure-gtk
+      # exec dbus-sway-environment
+      # exec configure-gtk
 
       output * bg ~/.config/wallpaper/wallpaper.png fill
       default_border none
@@ -44,6 +56,7 @@
       assign [app_id="firefox"] workspace 2
 
       exec swaymsg 'workspace 1; exec kitty';
-    '';
+      exec swaymsg 'workspace 2; exec firefox';
+      '';
   };
 }

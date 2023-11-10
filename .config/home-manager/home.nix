@@ -8,7 +8,6 @@ in {
     ./swaylock
     ./sway
     ./neovim
-    ./waybar
   ];
 
   home.username = "maidhc";
